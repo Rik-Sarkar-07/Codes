@@ -3,6 +3,9 @@
 #include <string.h>
 #include <time.h>
 
+// srand(time(0));
+// int r = rand() % 10;
+
 struct Node
 {
     int data;
@@ -68,25 +71,28 @@ void InsertNode(node **head, int data)
 }
 void InsertNodeLevel(node **head, node *link, int data)
 {
-    if (*head == NULL)
-    {
-        *head = CreateNode(data);
-        (*head)->down = link;
-    }
-    else if (link == NULL)
+
+    if (link == NULL)
         return;
     else
     {
-
-        node *p = *head;
-        while (p->next != NULL)
+        if (*head == NULL)
         {
-            p = p->next;
+            *head = CreateNode(data);
+            (*head)->down = link;
         }
-        node *q = CreateNode(data);
+        else
+        {
+            node *p = *head;
+            while (p->next != NULL)
+            {
+                p = p->next;
+            }
+            node *q = CreateNode(data);
 
-        p->next = q;
-        q->down = link;
+            p->next = q;
+            q->down = link;
+        }
     }
 }
 void Print(node *head)
@@ -138,7 +144,12 @@ int main(int argc, char const *argv[])
     node *linking[21];
     for (int i = 0; i <= 20; i++)
     {
-        if (Random() == 1)
+        if (i == 0)
+        {
+            linking[i] = Reffers(head[0], (10 + i));
+            InsertNodeLevel(&head[1], linking[i], (10 + i));
+        }
+        else if (Random() == 1)
         {
             linking[i] = Reffers(head[0], (10 + i));
             InsertNodeLevel(&head[1], linking[i], (10 + i));
@@ -151,7 +162,12 @@ int main(int argc, char const *argv[])
     node *link[21];
     for (int i = 0; i <= 20; i++)
     {
-        if (Random() == 1)
+        if (i == 0)
+        {
+            link[i] = Reffers(head[1], (10 + i));
+            InsertNodeLevel(&head[2], link[i], (10 + i));
+        }
+        else if (Random() == 1)
         {
             link[i] = Reffers(head[1], (10 + i));
             InsertNodeLevel(&head[2], link[i], (10 + i));

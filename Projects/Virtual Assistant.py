@@ -44,7 +44,7 @@ def takeCommand():
 
 
 if __name__ == '__main__':
-    print("Virtual Asisstant Running...")
+    print("Virtual Assistant Running...")
     speak("Hello Sudipto, I am Your Virtual Assistant. Ask Me Any Question")
 
     while True:
@@ -74,7 +74,7 @@ if __name__ == '__main__':
             codePath = "A:\\My Files\\Picture\\Swamiji.jpg"
             os.startfile(codePath)
 
-        elif 'hi asisstent how are you' in query:
+        elif 'hi assistent how are you' in query:
             speak('I am fine, What about you sudipto?')
         elif 'bye' in query or 'close' in query or 'stop' in query:
             speak("Good Bye Sudipta, Thank you.")

@@ -16,12 +16,13 @@ int iswin(int num,int destination)
 }
 void MachineAttempt(int *curr,int arr[],int step,int destination)
 {
+    cout<<"\n\t---- MACHINE ----\t\n";
     for (int i = 0; i < step; i++)
     {
         cout << "Machine Said = " << ++(*curr) << "\n";
         if (iswin(*curr,destination))
         {
-            cout << " \t Machine Win \n";
+            cout << " \n\n\n\t\t =-_-_-=[ M-A-C-H-I-N-E  W_I_N ]=-_-_-= \n\n\n\a";
             exit(0);
         }
         if (isWinNumber(arr,destination,step,*curr))
@@ -33,19 +34,20 @@ void MachineAttempt(int *curr,int arr[],int step,int destination)
 void PersonAttempt(int *curr,int destination,int step, string name)
 {
     int a;
-    cout << "Enter the numbers of attempt[1 to "<<step<<"] = ";
+    cout << "Enter The Numbers Of Attempt[1 to "<<step<<"] = ";
     cin >> a;
     if (a > step)
     {
         cout << "\t   !!!!! ERROR !!!!!   \t\n";
         exit(1);
     }
+     cout<<"\n\t---- "<<name<<" ----\t\n";
     for (int i = 0; i < a; i++)
     {
         cout << name << " Said = " << ++(*curr) << "\n";
         if (iswin(*curr,destination))
         {
-            cout << " \t " << name << " Win \n";
+            cout << " \n\n\n\t\t =-_-_-= [" << name << " W_I_N] =-_-_-=\n\n\n\a";
             exit(0);
         }
     }
@@ -84,18 +86,18 @@ int main()
 {
 
     string name;
-    cout << "Enter The Player Name = ";
-    cin >> name;
+    cout << "\t\t\tEnter The Player Name = ";
+    cin>>name;
     int step;
     int destination;
-    cout<<"Enter the Destination point = ";
+    cout<<"\t\t\tEnter The Destination Point = ";
     cin>>destination;
-    cout<<"Enter the At a time Step = ";
+    cout<<"\t\t\tEnter The At-A-Time Steps = ";
     cin>>step;
     int *arr = (int*)calloc(sizeof(int),(destination/(step+1)+1));
     ArrayInitilization(arr,step,destination);
 
-    cout << "Enter Choice [ Machine Frist 1 or Player Frist = 2] = ";
+    cout << "\t\t\tEnter Choice [1 ~ for Machine Frist || 2 ~ for Player Frist] = ";
     int ch;
     cin >> ch;
     if (ch == 1)
@@ -104,5 +106,6 @@ int main()
         PersonFrist(name,arr,step,destination);
     else
         cout << "\t Wrong Choice \n";
+    cout<<"\n\n\n\a";
     return 0;
 }

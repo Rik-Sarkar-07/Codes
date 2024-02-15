@@ -1,0 +1,31 @@
+<html>
+	<center>
+	<h1> Welcome to Rabin Tower </h1>
+	
+	<script>
+		function f(){
+			let v = document.getElementById("nm").value;
+			let p = document.getElementById("cv").value;
+			if(v == null || p == null || p.length < 3)
+			{
+				alert("Please Enter Correct Details ");
+				return false;
+			}
+			else{
+			
+				return true;
+			}
+		}
+	</script>
+	<body>
+		<h2> Enter Your Cradit Card Details To Book this Hotel </h2>
+		<form action=book.jsp method=post onsubmit="return f()">
+		<pre><input type=text value="Rabin Tower" name=nm hidden>
+		<h3> <label> Enter Your Card Number <input type=text name=cn id=nm>
+		<br>
+		<label> Enter CVV <input type=text id=cv>
+		<br>
+		<input type=submit value = BOOK >
+	</body>
+	
+</html>

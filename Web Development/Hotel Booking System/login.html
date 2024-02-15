@@ -1,0 +1,27 @@
+<html>
+	<center>
+	<h2> Welcome To Student Login Page </h2>
+	<body>
+	
+	<form action=val.jsp method=post onsubmit="return fn()">
+		<pre>
+		<label> Enter your user name  </label> <input type=text name=nm id=nm1>
+		<br><br>
+		<label> Enter your password  </label> <input type=password name=ps id=ps1>
+		
+		<input type=submit value=Login>
+	</form>
+	</body>
+	<script>
+	 function fn(){
+            let p = document.getElementById("nm1").value;
+            let u = document.getElementById("ps1").value;
+            if(p == " " || u == "" || p ==null || u == null){
+			alert("User Name & Password is not Compatable");
+                return false;
+            }
+            
+            return true;
+        }
+	</script>
+</html>

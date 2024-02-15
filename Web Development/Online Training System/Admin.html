@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-image: url("p2.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+    <center>
+      <h1>Welcome Instructor</h1>
+      <h2><a href="Home.html">Home</a> || <a href="User.html">Student</a></h2>
+      <form action="AdminLogin.jsp" method="post">
+        <table align="center">
+          <tr>
+            <td><label><b> Enter Password: </label></td>
+            <td>
+              <input
+                type="password"
+                id="pass"
+                name="pass"
+                placeholder="Enter Instructor Password"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td align="center"><input type="submit" value="Login" /></td>
+            <td align="center"><input type="reset" value="Reset" /></td>
+          </tr>
+        </table>
+      </form>
+    </center>
+  </body>
+</html>

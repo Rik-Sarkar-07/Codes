@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Page</title>
+  </head>
+  <style>
+    body {
+      background-image: url("p13.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+  
+  <body>
+    <center>
+      <h1>Welcome To Student Login Page</h1>
+      <h2>
+        <a href="Home.html">Home</a> || <a href="Admin.html">Instructor</a> ||
+        <a href="RegStudent.html">New Student</a>
+      </h2>
+      <form action="StudentLogin.jsp" method="post" onsubmit="f()">
+        <table align="center">
+          <tr>
+            <td><label><b> Enter User ID: </label></td>
+            <td>
+              <input type="text" name="uid" id="ui" placeholder="Enter User ID " />
+            </td>
+          </tr>
+          <tr>
+            <td><label><b> Enter Password: </label></td>
+            <td>
+              <input type="password" name="pass" id="pa" placeholder="Enter Password" />
+            </td>
+          </tr>
+          <tr>
+            <td align="center"><b><input type="reset" value="Reset" /></td>
+            <td align="center"><b><input type="submit" value="Login" /></td>
+          </tr>
+        </table>
+      </form>
+    </center>
+  </body>
+  <script>
+    function f(){
+      let a = document.getElementById("ui").value;
+      let b = document.getElementById("pa").value;
+      if(a != NaN && b.length() >1 && a.length() >1){
+        return true;
+      }
+      else{
+        alert("Some thing is wrong");
+        return false;
+      }
+    }
+  </script>
+</html>

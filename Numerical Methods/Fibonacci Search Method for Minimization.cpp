@@ -63,7 +63,7 @@ int main()
         k++;
     }
 
-    cout << "\n\n Maxima at the point  = " << (r + l) / 2 << "\tAfter " << fabs(r - l) << " Uncertainty and " << k << " Iterations." << endl;
+    cout << "\n\n Minima at the point  = " << (r + l) / 2 << "\tAfter " << fabs(r - l) << " Uncertainty and " << k << " Iterations." << endl;
     cout << "The value at that point = " << function((r + l) / 2) << endl;
 
     return 0;
